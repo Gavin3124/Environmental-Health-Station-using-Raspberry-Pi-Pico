@@ -12,14 +12,14 @@ Access dashboard remotely for campus safety monitoring.
 
 # Required Components
 Hardware:
-Raspberry Pi Pico microcontroller
-MQ-series gas sensor (such as MQ-2 or MQ-135) for air quality
-DHT11 or DHT22 sensor for temperature and humidity
-0.96 inch I2C OLED Display (SSD1306 driver)
-Buzzer (active or passive)
-Connecting wires, breadboard, power supply
+-Raspberry Pi Pico microcontroller
+-MQ-series gas sensor (such as MQ-2 or MQ-135) for air quality
+-DHT11 or DHT22 sensor for temperature and humidity
+-0.96 inch I2C OLED Display (SSD1306 driver)
+-Buzzer (active or passive)
+-Connecting wires, breadboard, power supply
 
 Software:
-Thonny IDE for MicroPython code development and uploading
-MicroPython firmware flashed on Pico
-ThingSpeak account for IoT dashboard and data logging
+-Thonny IDE for MicroPython code development and uploading
+-MicroPython firmware flashed on Pico
+-ThingSpeak account for IoT dashboard and data logging
