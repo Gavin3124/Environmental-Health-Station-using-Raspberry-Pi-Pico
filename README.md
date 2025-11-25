@@ -22,4 +22,23 @@ Hardware:
 Software:
 - Thonny IDE for MicroPython code development and uploading
 - MicroPython firmware flashed on Pico
-- ThingSpeak account for IoT dashboard and data logging 
+- ThingSpeak account for IoT dashboard and data logging
+
+
+## code logic implementation
+
+The code logic implementation for your IoT Environmental Health Station follows these steps:
+
+- Initialization: The program begins by importing required libraries and initializing hardware components—the I2C OLED display, DHT temperature and humidity sensor, gas sensor (connected to ADC), and buzzer. It also sets up the WiFi credentials and ThingSpeak API key.
+
+- WiFi Connection: The function connect_wifi() activates the device’s WiFi interface and attempts to connect to the specified network. It loops until connected and then prints the assigned IP address.
+
+- Sensor Reading: The read_sensors() function triggers the DHT sensor to measure temperature and humidity, reads the analog value from the gas sensor, and returns these values for further processing.
+
+- Display Update: The update_oled() function clears the OLED screen and displays the latest temperature, humidity, and gas sensor readings in a readable text format.
+
+- Alerts: The alert_check() function compares sensor readings against pre-defined safe thresholds (e.g., temperature range, humidity limits, and gas concentration). If any reading exceeds limits, the buzzer is activated as an alert; otherwise, it remains off.
+
+- Cloud Upload: The upload_to_thingspeak() function formats the sensor data into HTTP GET parameters and sends this to the ThingSpeak server, enabling remote monitoring and analytics through the ThingSpeak dashboard.
+
+- Looping: The main() function starts by connecting to WiFi, then enters an infinite loop where it continuously takes sensor readings, updates the OLED display, checks and triggers alerts, uploads data to ThingSpeak, and waits 15 seconds before repeating. The 15-second interval respects ThingSpeak’s update rate limits.
